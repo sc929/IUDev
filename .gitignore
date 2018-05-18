@@ -32,8 +32,14 @@
 
 
 # Build results
-
-.vs/
+!IUGameDev/
 IUGameDev/Debug/
 *.pdb
 *.ilk
+
+# Build
+!.vs/
+.vs/*
+!.vs/IUGameDev/
+.vs/IUGameDev/v15/*
+!.vs/IUGameDev/v15/.suo
