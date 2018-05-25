@@ -87,6 +87,12 @@
       </DelayLoadDLLs>
       <EmbedManagedResourceFile>%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)packages\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.1.2.8.8\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\Win32\Debug\zlibd.dll" "$(TargetDir)"
+copy "$(SolutionDir)packages\libpng.redist.1.6.28.1\build\native\bin\Win32\v140\dynamic\Debug\libpng16.dll" "$(TargetDir)"
+copy "$(SolutionDir)packages\libjpeg.redist.9.0.1.4\build\native\bin\v140\Win32\Debug\dynamic\cdecl\jpeg.dll" "$(TargetDir)"
+copy "$(SolutionDir)packages\libtiff.redist.4.0.6.2\build\native\bin\Debug\Win32\v140\libtiff.dll" "$(TargetDir)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -98,6 +104,10 @@
     <Link>
       <SubSystem>Windows</SubSystem>
     </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

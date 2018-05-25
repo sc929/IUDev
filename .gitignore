@@ -327,13 +327,3 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
-
-
-# Ignored DLL's
-!Debug/
-*/Debug/
-Debug/*
-!Debug/jpeg.dll
-!Debug/libpng16.dll
-!Debug/zlibd.dll
-!Debug/libtiff.dll
