@@ -21,6 +21,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Resources</Filter>
     </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextureManager.h">
@@ -30,6 +33,9 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="GameStart.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

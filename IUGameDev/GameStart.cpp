@@ -1,10 +1,12 @@
 #include "GameStart.h"
 #include "TextureManager.h"
 #include "GameObject.h"
-#include <string>
+#include "Map.h"
 
 GameObject* player;
 GameObject* enemy;
+Map* map;
+SDL_Renderer* GameStart::renderer = nullptr;
 
 GameStart::GameStart()
 {}
@@ -22,29 +24,27 @@ void GameStart::init(const char* title, int xpos, int ypos, int width, int heigh
 
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0)
 	{
-		std::cout << "System initialised..." << std::endl;
+		//System initialised...
 
 		window = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
 		if (window)
 		{
-			std::cout << "Window created!" << std::endl;
+			//Window created!
 		}
 
 		renderer = SDL_CreateRenderer(window, -1, 0);
 		if (renderer)
 		{
-			SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-			std::cout << "Renderer created" << std::endl;
+			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+			//Renderer created
 		}
 
 		isRunning = true;
 	}
-	else {
-		isRunning = false;
-	}
 
-	player = new GameObject("Images\\Tank.png", renderer, 0, 0);
-	enemy = new GameObject("Images\\Bullet.png", renderer, 50, 50);
+	player = new GameObject("Images\\Tank.png", 0, 0);
+	enemy = new GameObject("Images\\Bullet.png", 50, 50);
+	map = new Map();
 }
 
 void GameStart::handleEvents()
@@ -71,11 +71,9 @@ void GameStart::render()
 {
 	SDL_RenderClear(renderer);
 
-	// What to render
-
+	map->DrawMap();
 	player->Render();
 	enemy->Render();
-
 
 	SDL_RenderPresent(renderer);
 }

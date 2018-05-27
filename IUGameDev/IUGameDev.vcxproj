@@ -141,11 +141,13 @@ copy "$(SolutionDir)packages\libtiff.redist.4.0.6.2\build\native\bin\Debug\Win32
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameStart.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameStart.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="TextureManager.h" />
   </ItemGroup>
   <ItemGroup>
