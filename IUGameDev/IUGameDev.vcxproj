@@ -145,6 +145,8 @@ copy "$(SolutionDir)packages\libtiff.redist.4.0.6.2\build\native\bin\Debug\Win32
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Components.h" />
+    <ClInclude Include="EntityComponentSystem.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameStart.h" />
     <ClInclude Include="Map.h" />

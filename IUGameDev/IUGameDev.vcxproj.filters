@@ -38,6 +38,12 @@
     <ClInclude Include="Map.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="EntityComponentSystem.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Components.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
