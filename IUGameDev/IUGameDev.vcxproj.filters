@@ -1,48 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Headers">
-      <UniqueIdentifier>{72655a64-bc7a-4a12-b1a1-3d2a1863a4f3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resources">
       <UniqueIdentifier>{308d918e-c133-4373-a945-ac40eef909de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ComponentSystem">
+      <UniqueIdentifier>{72655a64-bc7a-4a12-b1a1-3d2a1863a4f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StartingSources">
+      <UniqueIdentifier>{955a6eee-78b5-4f54-92c3-9db37b7e679a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameObject.cpp">
       <Filter>Resources</Filter>
     </ClCompile>
-    <ClCompile Include="GameStart.cpp">
-      <Filter>Resources</Filter>
-    </ClCompile>
     <ClCompile Include="TextureManager.cpp">
-      <Filter>Resources</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
       <Filter>Resources</Filter>
     </ClCompile>
     <ClCompile Include="Map.cpp">
       <Filter>Resources</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>StartingSources</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStart.cpp">
+      <Filter>StartingSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TextureManager.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="GameStart.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="EntityComponentSystem.h">
-      <Filter>Headers</Filter>
+      <Filter>ComponentSystem</Filter>
     </ClInclude>
     <ClInclude Include="Components.h">
-      <Filter>Headers</Filter>
+      <Filter>ComponentSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStart.h">
+      <Filter>StartingSources</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteComponent.h">
+      <Filter>ComponentSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionComponent.h">
+      <Filter>ComponentSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

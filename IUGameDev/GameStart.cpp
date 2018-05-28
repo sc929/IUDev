@@ -1,18 +1,15 @@
 #include "GameStart.h"
 #include "TextureManager.h"
-#include "GameObject.h"
 #include "Map.h"
-
-#include "EntityComponentSystem.h"
+//#include "EntityComponentSystem.h"
 #include "Components.h"
 
-GameObject* player;
-GameObject* enemy;
 Map* map;
+Manager manager;
+
 SDL_Renderer* GameStart::renderer = nullptr;
 
-Manager manager;
-auto& newPlayer(manager.addEntity());
+auto& player(manager.addEntity());
 
 GameStart::GameStart()
 {}
@@ -48,12 +45,10 @@ void GameStart::init(const char* title, int xpos, int ypos, int width, int heigh
 		isRunning = true;
 	}
 
-	player = new GameObject("Images\\Tank.png", 0, 0);
-	enemy = new GameObject("Images\\Bullet.png", 50, 50);
 	map = new Map();
 
-	newPlayer.addComponent<PositionComponent>();
-	newPlayer.getComponent<PositionComponent>().SetPos(500,500);
+	player.addComponent<PositionComponent>();
+	player.addComponent<SpriteComponent>("Images\\Tank.png");
 }
 
 void GameStart::handleEvents()
@@ -72,20 +67,20 @@ void GameStart::handleEvents()
 
 void GameStart::update()
 {
-	player->Update();
-	enemy->Update();
+	manager.refresh();
 	manager.update();
-	std::cout << newPlayer.getComponent<PositionComponent>().x() << std::endl;
+
+	if (player.getComponent<PositionComponent>().x() > 100)
+	{
+		player.getComponent<SpriteComponent>().setTex("Images\\Bullet.png");
+	}
 }
 
 void GameStart::render()
 {
 	SDL_RenderClear(renderer);
-
 	map->DrawMap();
-	player->Render();
-	enemy->Render();
-
+	manager.draw();
 	SDL_RenderPresent(renderer);
 }
 
@@ -94,5 +89,4 @@ void GameStart::clean()
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
-	std::cout << "Game cleaned" << std::endl;
 }
