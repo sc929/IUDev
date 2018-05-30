@@ -27,6 +27,9 @@
     <ClCompile Include="GameStart.cpp">
       <Filter>StartingSources</Filter>
     </ClCompile>
+    <ClCompile Include="Vector2D.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EntityComponentSystem.h">
@@ -50,7 +53,13 @@
     <ClInclude Include="SpriteComponent.h">
       <Filter>ComponentSystem</Filter>
     </ClInclude>
-    <ClInclude Include="PositionComponent.h">
+    <ClInclude Include="TransformComponent.h">
+      <Filter>ComponentSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardController.h">
       <Filter>ComponentSystem</Filter>
     </ClInclude>
   </ItemGroup>

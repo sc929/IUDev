@@ -143,16 +143,19 @@ copy "$(SolutionDir)packages\libtiff.redist.4.0.6.2\build\native\bin\Debug\Win32
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Components.h" />
     <ClInclude Include="EntityComponentSystem.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameStart.h" />
+    <ClInclude Include="KeyboardController.h" />
     <ClInclude Include="Map.h" />
-    <ClInclude Include="PositionComponent.h" />
+    <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="SpriteComponent.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

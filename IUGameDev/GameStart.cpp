@@ -1,13 +1,13 @@
 #include "GameStart.h"
 #include "TextureManager.h"
 #include "Map.h"
-//#include "EntityComponentSystem.h"
 #include "Components.h"
 
 Map* map;
 Manager manager;
 
 SDL_Renderer* GameStart::renderer = nullptr;
+SDL_Event GameStart::event;
 
 auto& player(manager.addEntity());
 
@@ -47,19 +47,22 @@ void GameStart::init(const char* title, int xpos, int ypos, int width, int heigh
 
 	map = new Map();
 
-	player.addComponent<PositionComponent>();
+	player.addComponent<TransformComponent>();
 	player.addComponent<SpriteComponent>("Images\\Tank.png");
+	player.addComponent<KeyboardController>();
+
 }
 
 void GameStart::handleEvents()
 {
-	SDL_Event event;
+
 	SDL_PollEvent(&event);
-	switch (event.type) {
+
+	switch (event.type)
+	{
 	case SDL_QUIT:
 		isRunning = false;
 		break;
-
 	default:
 		break;
 	}
@@ -69,11 +72,12 @@ void GameStart::update()
 {
 	manager.refresh();
 	manager.update();
+	//player.getComponent<TransformComponent>().position.Add(Vector2D(3, 1));
 
-	if (player.getComponent<PositionComponent>().x() > 100)
-	{
-		player.getComponent<SpriteComponent>().setTex("Images\\Bullet.png");
-	}
+	//if (player.getComponent<TransformComponent>().position.x > 100)
+	//{
+	//	player.getComponent<SpriteComponent>().setTex("Images\\Bullet.png");
+	//}
 }
 
 void GameStart::render()
