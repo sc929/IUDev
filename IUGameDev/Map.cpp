@@ -25,7 +25,11 @@ Map::Map()
 }
 
 Map::~Map()
-{}
+{
+	SDL_DestroyTexture(dirt);
+	SDL_DestroyTexture(grass);
+	SDL_DestroyTexture(water);
+}
 
 void Map::LoadMap(int arr[5][5])
 {
@@ -47,7 +51,7 @@ void Map::DrawMap()
 		for (int column = 0; column < 5; column++)
 		{
 			type = map[row][column];
-			
+
 			dest.x = column * 32;
 			dest.y = row * 32;
 
